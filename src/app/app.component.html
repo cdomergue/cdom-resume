@@ -1,4 +1,4 @@
-<div class="bg-gray-200 flex flex-col text-center p-8 min-h-[100svh]">
+<div class="bg-gray-200 flex flex-col text-center p-8 min-h-[100svh] overflow-x-hidden">
     <div class="mb-4">
         <img class="mx-auto rounded-full" ngSrc="assets/christophe.png" alt="Profile Picture" height="200" width="200">
     </div>
@@ -24,7 +24,7 @@
     <div>
     </div>
 </div>
-<div class="fixed top-4 right-4">
+<div class="fixed top-4 right-4 z-10">
   @if (currentLanguage() === 'english') {
     <button mat-flat-button color="primary" (click)="currentLanguage.set('french')">Français</button>
   } @else if(currentLanguage() === 'french') {
