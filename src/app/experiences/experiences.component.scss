@@ -2,13 +2,13 @@
   position: relative;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("/assets/bg-tech.png");
+    background-image: url('/assets/bg-tech.png');
     opacity: 0.05;
   }
 }

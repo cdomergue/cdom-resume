@@ -1,8 +1,8 @@
-import {Injectable, signal, WritableSignal} from '@angular/core';
+import { Injectable, signal, WritableSignal } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LanguageService {
- public currentLanguage: WritableSignal<'french' | 'english'> = signal('french');
+  public currentLanguage: WritableSignal<'french' | 'english'> = signal('french');
 }
