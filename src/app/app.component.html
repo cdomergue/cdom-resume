@@ -13,22 +13,21 @@
     </div>
 
     <div class="flex flex-row mb-4 justify-center space-x-4">
-      <button mat-flat-button color="primary" i18n>{{ experience() }}</button>
-      <button mat-flat-button color="primary" i18n>{{ diplomas() }}</button>
-      <!-- Add more buttons as needed -->
+      <button mat-flat-button [color]="rle.isActive ? 'accent' : 'primary'" routerLink="experiences" routerLinkActive #rle="routerLinkActive">{{ experience() }}</button>
+      <button mat-flat-button color="primary" >{{ diplomas() }}</button>
     </div>
 
     <div>
-      <ng-content/>
+      <router-outlet/>
     </div>
 
     <div>
     </div>
 </div>
 <div class="fixed top-4 right-4">
-  @if (current() === 'english') {
-    <button mat-flat-button color="primary" i18n (click)="current.set('french')">Français</button>
-  } @else if(current() === 'french') {
-    <button mat-flat-button color="primary" i18n (click)="current.set('english')">English</button>
+  @if (currentLanguage() === 'english') {
+    <button mat-flat-button color="primary" (click)="currentLanguage.set('french')">Français</button>
+  } @else if(currentLanguage() === 'french') {
+    <button mat-flat-button color="primary" (click)="currentLanguage.set('english')">English</button>
   }
 </div>
