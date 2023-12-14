@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, effect, inject, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { LanguageService } from '../language.service';
 import { NgOptimizedImage } from '@angular/common';
 import { MarkdownComponent } from 'ngx-markdown';
@@ -14,19 +14,7 @@ import { ExperiencesEn, ExperiencesFr } from './experiences.data';
 })
 export default class ExperiencesComponent {
   currentLanguage = inject(LanguageService).currentLanguage;
-  experiences: Signal<Experience[]>;
-
-  constructor() {
-    effect(
-      () => {
-        this.setLanguage(this.currentLanguage());
-      },
-      { allowSignalWrites: true },
-    );
-    this.experiences = computed(() => (this.currentLanguage() === 'french' ? ExperiencesFr : ExperiencesEn));
-  }
-
-  private setLanguage(current: 'french' | 'english') {}
+  experiences = computed(() => (this.currentLanguage() === 'french' ? ExperiencesFr : ExperiencesEn));
 }
 
 export type Experience = {

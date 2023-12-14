@@ -3,18 +3,18 @@
         <img class="mx-auto rounded-full" ngSrc="assets/christophe.png" alt="Profile Picture" height="200" width="200">
     </div>
     <div class="text-4xl font-bold mb-4">
-      {{ name() }}
+      {{ appTranslation().name }}
     </div>
     <div class="text-xl mb-4">
-      {{  title() }}
+      {{  appTranslation().title }}
     </div>
     <div class="text-gray-700 text-md mb-8 mx-6">
-      {{ intro() }}
+      {{ appTranslation().intro }}
     </div>
 
     <div class="flex flex-row mb-4 justify-center space-x-4">
-      <button mat-flat-button [color]="rle.isActive ? 'accent' : 'primary'" routerLink="experiences" routerLinkActive #rle="routerLinkActive">{{ experience() }}</button>
-      <button mat-flat-button color="primary" >{{ diplomas() }}</button>
+      <button mat-flat-button [color]="rle.isActive ? 'accent' : 'primary'" routerLink="experiences" routerLinkActive #rle="routerLinkActive">{{ appTranslation().experiences }}</button>
+      <button mat-flat-button color="primary" >{{ appTranslation().diplomas }}</button>
     </div>
 
     <div>
@@ -27,7 +27,7 @@
 <div class="fixed top-4 right-4 z-10">
   @if (currentLanguage() === 'english') {
     <button mat-flat-button color="primary" (click)="currentLanguage.set('french')">Français</button>
-  } @else if(currentLanguage() === 'french') {
+  } @else {
     <button mat-flat-button color="primary" (click)="currentLanguage.set('english')">English</button>
   }
 </div>
