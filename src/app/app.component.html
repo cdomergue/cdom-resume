@@ -1,6 +1,6 @@
 <div class="bg-gray-200 flex flex-col text-center p-8 min-h-[100svh] overflow-x-hidden">
     <div class="mb-4">
-        <img class="mx-auto rounded-full" ngSrc="assets/christophe.png" alt="Profile Picture" height="200" width="200">
+        <img class="mx-auto rounded-full" ngSrc="assets/christophe.png" alt="Profile Picture" height="200" width="200" [priority]="true">
     </div>
     <div class="text-4xl font-bold mb-4">
       {{ appTranslation().name }}
@@ -14,6 +14,7 @@
 
     <div class="flex flex-row mb-4 justify-center space-x-4">
       <button mat-flat-button [color]="rle.isActive ? 'accent' : 'primary'" routerLink="experiences" routerLinkActive #rle="routerLinkActive">{{ appTranslation().experiences }}</button>
+      <button mat-flat-button [color]="rld.isActive ? 'accent' : 'primary'" routerLink="demos" routerLinkActive #rld="routerLinkActive">{{ appTranslation().demos }}</button>
       <button mat-flat-button color="primary" >{{ appTranslation().diplomas }}</button>
     </div>
 

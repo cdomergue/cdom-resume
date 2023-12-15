@@ -4,6 +4,7 @@ export const AppTranslationFr = {
   title: 'Développeur Front-End',
   experiences: 'Mes expériences',
   diplomas: 'Mes diplômes et études',
+  demos: 'Démos',
 };
 
 export const AppTranslationEn = {
@@ -12,4 +13,5 @@ export const AppTranslationEn = {
   title: 'Front-End Developer',
   experiences: 'Work Experiences',
   diplomas: 'Diplomas & Education',
+  demos: 'Demos',
 };
