@@ -15,4 +15,3 @@ export default class DemosComponent {
   currentLanguage = inject(LanguageService).currentLanguage;
   appTranslation = computed(() => (this.currentLanguage() === 'french' ? AppTranslationFr : AppTranslationEn));
 }
-

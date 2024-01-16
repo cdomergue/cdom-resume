@@ -1,0 +1,8 @@
+@for (product of products(); track product.id) {
+  <div class="bg-gray-50 border border-solid mb-4">
+    <h3>{{product.name}}</h3>
+    <div>{{ appTranslation().products.type }} {{appTranslation().products[product.type]}}</div>
+    <div>{{ appTranslation().products.price }} {{product.price | currency:'EUR':'symbol':'1.0-0'}}</div>
+    <div>{{ appTranslation().products.description }} {{product.description}}</div>
+  </div>
+}

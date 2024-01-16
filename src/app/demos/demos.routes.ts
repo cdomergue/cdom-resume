@@ -8,7 +8,12 @@ const routes: Routes = [
   {
     path: 'snake',
     loadComponent: () => import('./snake/snake.component'),
-    title: 'Démos - Snake',
+    title: 'Démos - Snake - Christophe Domergue',
+  },
+  {
+    path: 'ngrx',
+    loadComponent: () => import('./ng-rx/ng-rx.component'),
+    title: 'Démos - Ng Rx - Christophe Domergue',
   },
 ];
 

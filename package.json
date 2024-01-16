@@ -9,7 +9,7 @@
     "test": "ng test",
     "serve:ssr:christophe-resume": "node dist/christophe-resume/server/server.mjs",
     "format": "prettier --config ./.prettierrc \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\" --write"
-},
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.0.0",
@@ -24,6 +24,10 @@
     "@angular/platform-server": "^17.0.0",
     "@angular/router": "^17.0.0",
     "@angular/ssr": "^17.0.7",
+    "@ngrx/effects": "^17.0.1",
+    "@ngrx/entity": "^17.0.1",
+    "@ngrx/store": "^17.0.1",
+    "@ngrx/store-devtools": "^17.0.1",
     "express": "^4.18.2",
     "marked": "^9.1.6",
     "ngx-markdown": "^17.1.1",

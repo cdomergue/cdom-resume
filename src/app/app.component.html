@@ -14,8 +14,8 @@
 
     <div class="flex flex-row mb-4 justify-center space-x-4">
       <button mat-flat-button [color]="rle.isActive ? 'accent' : 'primary'" routerLink="experiences" routerLinkActive #rle="routerLinkActive">{{ appTranslation().experiences }}</button>
-      <button mat-flat-button [color]="rld.isActive ? 'accent' : 'primary'" routerLink="demos" routerLinkActive #rld="routerLinkActive">{{ appTranslation().demos }}</button>
       <button mat-flat-button color="primary" >{{ appTranslation().diplomas }}</button>
+      <button mat-flat-button [color]="rld.isActive ? 'accent' : 'primary'" routerLink="demos" routerLinkActive #rld="routerLinkActive">{{ appTranslation().demos }}</button>
     </div>
 
     <div>

@@ -9,7 +9,6 @@ export const routes: Routes = [
   {
     path: 'demos',
     loadComponent: () => import('./demos/demos.component'),
-    title: 'Démos - Christophe Domergue',
     loadChildren: () => import('./demos/demos.routes'),
   },
 ];
