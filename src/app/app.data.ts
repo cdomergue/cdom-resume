@@ -5,6 +5,8 @@ export const AppTranslationFr = {
   experiences: 'Mes expériences',
   diplomas: 'Mes diplômes et études',
   demos: 'Démos',
+  snake: 'Snake avec Signals',
+  ngRx: 'Ng Rx',
 };
 
 export const AppTranslationEn = {
@@ -14,4 +16,6 @@ export const AppTranslationEn = {
   experiences: 'Work Experiences',
   diplomas: 'Diplomas & Education',
   demos: 'Demos',
+  snake: 'Snake with Signals',
+  ngRx: 'Ng Rx',
 };

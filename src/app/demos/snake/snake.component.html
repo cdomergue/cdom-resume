@@ -1,0 +1,25 @@
+<div class="hidden md:block">
+  <div class="w-full text-center">Snake entièrement en Signals. Utilisez ZQSD pour vous déplacer. D pour démarrer</div>
+  <div>Score : {{points()}}</div>
+  <div class="flex justify-center">
+    <div class="w-[504px] h-[504px] border border-black" #gameBoard>
+      @for (segment of snakeSegments(); track segment.id) {
+        <div class="segment-wrapper" [ngStyle]="{
+      top: segment.top + 'px',
+      left: segment.left + 'px'
+    }" >
+          <div class="segment" [attr.data-id]="segment.id">
+          </div>
+        </div>
+      }
+
+      <div class="food" [ngStyle]="{
+      top: foodPosition().top + 'px',
+      left: foodPosition().left + 'px'
+    }"></div>
+    </div>
+  </div>
+</div>
+<div class="md:hidden">
+  Snake non disponible en mode mobile
+</div>
