@@ -6,8 +6,8 @@ import { interval } from 'rxjs';
   selector: 'app-demos',
   standalone: true,
   imports: [NgStyle, NgForOf],
-  templateUrl: './demos.component.html',
-  styleUrl: './demos.component.scss',
+  templateUrl: './snake.component.html',
+  styleUrl: './snake.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class DemosComponent implements OnDestroy {
@@ -40,24 +40,20 @@ export default class DemosComponent implements OnDestroy {
     if (this.currentDirection() === 'pause') {
       return;
     }
-    const snakeSegments = [...this.snakeSegments()];
-    let newHead = { ...snakeSegments[0] };
+    let newHead = { ...this.snakeSegments()[0] };
+    newHead.id = id ?? 0;
     switch (this.currentDirection()) {
       case 'd':
         newHead.left += 8;
-        newHead.id = id ?? 0 ?? +2;
         break;
       case 'q':
         newHead.left -= 8;
-        newHead.id = (id ?? 0) + 2;
         break;
       case 'z':
         newHead.top -= 8;
-        newHead.id = id ?? 0 ?? +2;
         break;
       case 's':
         newHead.top += 8;
-        newHead.id = id ?? 0 ?? +2;
         break;
     }
     if (newHead.left > 496) {
@@ -72,12 +68,13 @@ export default class DemosComponent implements OnDestroy {
     if (newHead.top < 0) {
       newHead.top = 496;
     }
-    snakeSegments.unshift(newHead);
-    snakeSegments.pop();
+    this.snakeSegments.update((snakeSegments) => {
+      const newSegments = [...[newHead], ...snakeSegments];
+      newSegments.pop();
+      return newSegments;
+    });
     if (this.checkForSelfCollision()) {
       this.currentDirection.set('pause');
-    } else {
-      this.snakeSegments.set(snakeSegments);
     }
   }
 

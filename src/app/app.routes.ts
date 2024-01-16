@@ -6,5 +6,10 @@ export const routes: Routes = [
     loadComponent: () => import('./experiences/experiences.component'),
     title: 'Expériences - Christophe Domergue',
   },
-  { path: 'demos', loadComponent: () => import('./demos/demos.component'), title: 'Démos - Christophe Domergue' },
+  {
+    path: 'demos',
+    loadComponent: () => import('./demos/demos.component'),
+    title: 'Démos - Christophe Domergue',
+    loadChildren: () => import('./demos/demos.routes'),
+  },
 ];
