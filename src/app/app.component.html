@@ -25,10 +25,11 @@
     <div>
     </div>
 </div>
-<div class="fixed top-4 right-4 z-10">
+<div class="fixed top-4 right-4 z-10 space-x-4">
   @if (currentLanguage() === 'english') {
     <button mat-flat-button color="primary" (click)="currentLanguage.set('french')">Français</button>
   } @else {
     <button mat-flat-button color="primary" (click)="currentLanguage.set('english')">English</button>
   }
+  <a href="https://github.com/cdomergue/cdom-resume" mat-flat-button color="primary" target="_blank">Github</a>
 </div>
