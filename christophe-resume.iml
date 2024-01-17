@@ -5,6 +5,7 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="rythm.js" level="application" />
   </component>
   <component name="SonarLintModuleSettings">
     <option name="uniqueId" value="f2012859-8936-4347-8601-0d539f2bc90c" />

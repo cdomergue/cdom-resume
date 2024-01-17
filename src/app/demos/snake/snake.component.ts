@@ -169,7 +169,7 @@ export default class DemosComponent implements OnDestroy {
   private initRythm() {
     // @ts-ignore
     this.rythm = new Rythm();
-    this.rythm.setMusic('assets/bip-boup.mp3');
+    this.rythm.setMusic('assets/bip-boup.webm');
     this.rythm.startingScale = 1;
     this.rythm.addRythm('button1', 'kern', 0, 10, {
       min: -5,
