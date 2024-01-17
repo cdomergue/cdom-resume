@@ -7,7 +7,11 @@ export const AppTranslationFr = {
   experiences: 'Mes expériences',
   diplomas: 'Études',
   demos: 'Démos',
-  snake: 'Snake avec Signals',
+  snake: {
+    title: 'Snake avec Signals',
+    info: 'Snake utilisant Angular Signals. Utilisez ZQSD pour vous déplacer. D pour démarrer',
+    stopMusic: 'Stop Musique et Animations',
+  },
   ngRx: 'Ng Rx',
   products: {
     [ProductType.VEHICLE]: 'Véhicule',
@@ -26,7 +30,11 @@ export const AppTranslationEn = {
   experiences: 'Work Experiences',
   diplomas: 'Education',
   demos: 'Demos',
-  snake: 'Snake with Signals',
+  snake: {
+    title: 'Snake with Signals',
+    info: 'Snake using Angular Signals. Use ZQSD to move. D to start',
+    stopMusic: 'Stop Music and Animations',
+  },
   ngRx: 'Ng Rx',
   products: {
     [ProductType.VEHICLE]: 'Vehicle',
