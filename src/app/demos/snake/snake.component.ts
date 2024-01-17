@@ -97,16 +97,16 @@ export default class DemosComponent implements OnDestroy {
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
     event.stopPropagation();
-    if (this.lastKeyPressed === 'd' || this.lastKeyPressed === 'q') {
+    if (this.lastKeyPressed === 'd' || this.lastKeyPressed === 'q' || this.lastKeyPressed === 'a') {
       if (!this.started) {
         this.rythm.start();
         this.started = true;
       }
-      if (event.key! === 'z' || event.key === 's') {
+      if (event.key! === 'z' || event.key! === 'w' || event.key === 's') {
         this.currentDirection.set(event.key);
       }
-    } else if (this.lastKeyPressed === 'z' || this.lastKeyPressed === 's') {
-      if (event.key === 'd' || event.key === 'q') {
+    } else if (this.lastKeyPressed === 'z' || this.lastKeyPressed === 'w' || this.lastKeyPressed === 's') {
+      if (event.key === 'd' || event.key === 'q' || event.key === 'a') {
         this.currentDirection.set(event.key);
       }
     }
@@ -131,9 +131,11 @@ export default class DemosComponent implements OnDestroy {
         newHead.left += 8;
         break;
       case 'q':
+      case 'a':
         newHead.left -= 8;
         break;
       case 'z':
+      case 'w':
         newHead.top -= 8;
         break;
       case 's':
@@ -171,23 +173,7 @@ export default class DemosComponent implements OnDestroy {
     this.rythm = new Rythm();
     this.rythm.setMusic('assets/bip-boup.webm');
     this.rythm.startingScale = 1;
-    this.rythm.addRythm('button1', 'kern', 0, 10, {
-      min: -5,
-      max: 5,
-    });
-    this.rythm.addRythm('button2', 'kern', 150, 40, {
-      min: -5,
-      max: 5,
-    });
-    this.rythm.addRythm('button3', 'kern', 500, 100, {
-      min: -5,
-      max: 5,
-    });
-    this.rythm.addRythm('bg-gray-100', 'color', 0, 10);
-    this.rythm.addRythm('bg-gray-200', 'color', 0, 40, {
-      from: [255, 255, 255],
-      to: [200, 200, 200],
-    });
+    this.rythm.addRythm('game-board', 'color', 0, 10);
     this.rythm.addRythm('segment', 'color', 0, 10, {
       from: [255, 255, 0],
       to: [255, 0, 0],
@@ -197,6 +183,5 @@ export default class DemosComponent implements OnDestroy {
       to: [255, 0, 0],
     });
     this.rythm.addRythm('food', 'pulse', 0, 10);
-    this.rythm.addRythm('rounded-full', 'pulse', 0, 10);
   }
 }

@@ -2,7 +2,7 @@
   <div class="w-full text-center">{{appTranslation().snake.info}}</div>
   <div>Score : {{points()}}</div>
   <div class="flex justify-center">
-    <div class="w-[504px] h-[504px] border border-black bg-gray-100" #gameBoard>
+    <div class="w-[504px] h-[504px] border border-black bg-gray-100 game-board" #gameBoard>
       @for (segment of snakeSegments(); track segment.id) {
         <div class="segment-wrapper" [ngStyle]="{
       top: segment.top + 'px',

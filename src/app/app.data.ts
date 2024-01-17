@@ -9,7 +9,7 @@ export const AppTranslationFr = {
   demos: 'Démos',
   snake: {
     title: 'Snake avec Signals',
-    info: 'Snake utilisant Angular Signals. Utilisez ZQSD pour vous déplacer. D pour démarrer',
+    info: 'Snake utilisant Angular Signals. Utilisez ZQSD ou WASD pour vous déplacer. D pour démarrer',
     stopMusic: 'Stop Musique et Animations',
   },
   ngRx: 'Ng Rx',
@@ -36,7 +36,7 @@ export const AppTranslationEn = {
   demos: 'Demos',
   snake: {
     title: 'Snake with Signals',
-    info: 'Snake using Angular Signals. Use ZQSD to move. D to start',
+    info: 'Snake using Angular Signals. Use WASD or ZQSD to move. D to start',
     stopMusic: 'Stop Music and Animations',
   },
   ngRx: 'Ng Rx',
