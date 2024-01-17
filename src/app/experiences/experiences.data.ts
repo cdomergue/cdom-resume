@@ -2,6 +2,21 @@ import { Experience } from './experiences.component';
 
 export const ExperiencesFr: Experience[] = [
   {
+    id: 0,
+    duration: 'En cours',
+    start: 'Janvier 2024',
+    end: '',
+    title: 'Développeur Angular',
+    logoUrl: 'assets/logo-bnp.png',
+    companyName: 'BNP Paribas',
+    body: [
+      {
+        title: 'Contexte',
+        text: "Mission de développement Angular pour un projet de gestion d'actif bancaire lié aux activités de Credit Corpoate.",
+      },
+    ],
+  },
+  {
     id: 1,
     duration: '6 ans',
     start: 'Décembre 2017',
@@ -80,6 +95,21 @@ export const ExperiencesFr: Experience[] = [
 ];
 
 export const ExperiencesEn: Experience[] = [
+  {
+    id: 0,
+    duration: 'Ongoing',
+    start: 'January 2024',
+    end: '',
+    title: 'Angular Developer',
+    logoUrl: 'assets/logo-bnp.png',
+    companyName: 'BNP Paribas CIB',
+    body: [
+      {
+        title: 'Context',
+        text: 'Angular development mission for a banking asset management project related to Credit Corporate activities.',
+      },
+    ],
+  },
   {
     id: 1,
     title: 'Full Stack Angular Developer',

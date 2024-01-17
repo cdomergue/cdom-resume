@@ -1,26 +1,29 @@
 <div class="hidden md:block">
-  <div class="w-full text-center">{{appTranslation().snake.info}}</div>
-  <div>Score : {{points()}}</div>
+  <div class="w-full text-center">{{ appTranslation().snake.info }}</div>
+  <div>Score : {{ points() }}</div>
   <div class="flex justify-center">
     <div class="w-[504px] h-[504px] border border-black bg-gray-100 game-board" #gameBoard>
       @for (segment of snakeSegments(); track segment.id) {
-        <div class="segment-wrapper" [ngStyle]="{
-      top: segment.top + 'px',
-      left: segment.left + 'px'
-    }" >
-          <div class="segment" [attr.data-id]="segment.id">
-          </div>
+        <div
+          class="segment-wrapper"
+          [ngStyle]="{
+            top: segment.top + 'px',
+            left: segment.left + 'px'
+          }"
+        >
+          <div class="segment" [attr.data-id]="segment.id"></div>
         </div>
       }
 
-      <div class="food" [ngStyle]="{
-      top: foodPosition().top + 'px',
-      left: foodPosition().left + 'px'
-    }"></div>
+      <div
+        class="food"
+        [ngStyle]="{
+          top: foodPosition().top + 'px',
+          left: foodPosition().left + 'px'
+        }"
+      ></div>
     </div>
   </div>
-  <button mat-flat-button class="rythm-bass mt-4" (click)="stopAudio()">{{appTranslation().snake.stopMusic}}</button>
+  <button mat-flat-button class="rythm-bass mt-4" (click)="stopAudio()">{{ appTranslation().snake.stopMusic }}</button>
 </div>
-<div class="md:hidden">
-  Snake non disponible en mode mobile
-</div>
+<div class="md:hidden">Snake non disponible en mode mobile</div>

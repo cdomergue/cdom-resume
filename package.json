@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:christophe-resume": "node dist/christophe-resume/server/server.mjs",
-    "format": "prettier --config ./.prettierrc \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\" --write"
+    "format": "prettier --config ./.prettierrc \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss,.html}\" --write"
   },
   "private": true,
   "dependencies": {

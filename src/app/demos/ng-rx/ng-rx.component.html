@@ -1,42 +1,46 @@
 <div class="w-full flex justify-center">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-4 flex flex-col items-center bg-gray-100 p-8 mb-8 border border-solid border-black w-[500px]">
+  <form
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    class="space-y-4 flex flex-col items-center bg-gray-100 p-8 mb-8 border border-solid border-black w-[500px]"
+  >
     <h2>Add a Product</h2>
 
     <mat-form-field appearance="fill">
-      <mat-label>{{appTranslation().products.name}}</mat-label>
-      <input matInput formControlName="name">
-      @if(form.get('name')?.invalid && form.get('name')?.touched) {
+      <mat-label>{{ appTranslation().products.name }}</mat-label>
+      <input matInput formControlName="name" />
+      @if (form.get('name')?.invalid && form.get('name')?.touched) {
         <mat-error>
-          {{appTranslation().products.nameRequired}}
+          {{ appTranslation().products.nameRequired }}
         </mat-error>
       }
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>{{appTranslation().products.description}}</mat-label>
-      <input matInput formControlName="description">
-      @if(form.get('description')?.invalid && form.get('description')?.touched) {
+      <mat-label>{{ appTranslation().products.description }}</mat-label>
+      <input matInput formControlName="description" />
+      @if (form.get('description')?.invalid && form.get('description')?.touched) {
         <mat-error>
-          {{appTranslation().products.descriptionRequired}}
+          {{ appTranslation().products.descriptionRequired }}
         </mat-error>
       }
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>{{appTranslation().products.type}}</mat-label>
+      <mat-label>{{ appTranslation().products.type }}</mat-label>
       <mat-select formControlName="type">
-        <mat-option [value]="productType.VEHICLE">{{appTranslation().products[productType.VEHICLE]}}</mat-option>
-        <mat-option [value]="productType.BUILDING">{{appTranslation().products[productType.BUILDING]}}</mat-option>
-        <mat-option [value]="productType.AIRPLANE">{{appTranslation().products[productType.AIRPLANE]}}</mat-option>
+        <mat-option [value]="productType.VEHICLE">{{ appTranslation().products[productType.VEHICLE] }}</mat-option>
+        <mat-option [value]="productType.BUILDING">{{ appTranslation().products[productType.BUILDING] }}</mat-option>
+        <mat-option [value]="productType.AIRPLANE">{{ appTranslation().products[productType.AIRPLANE] }}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>{{appTranslation().products.price}}</mat-label>
-      <input matInput type="number" formControlName="price">
-      @if(form.get('price')?.invalid && form.get('price')?.touched) {
+      <mat-label>{{ appTranslation().products.price }}</mat-label>
+      <input matInput type="number" formControlName="price" />
+      @if (form.get('price')?.invalid && form.get('price')?.touched) {
         <mat-error>
-          {{appTranslation().products.priceRequired}}
+          {{ appTranslation().products.priceRequired }}
         </mat-error>
       }
     </mat-form-field>
@@ -45,7 +49,7 @@
   </form>
 </div>
 
-@if(isLoading()) {
+@if (isLoading()) {
   <div class="flex w-full justify-center"><mat-spinner></mat-spinner></div>
 } @else {
   <div class="container mx-auto px-4">
@@ -54,12 +58,16 @@
         <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2 py-4">
           <div class="bg-gray-50 p-4 pt-0 rounded">
             <div class="flex items-center">
-              <div class="flex-1 text-xl">{{product.name}}</div>
-              <div class="w-0 overflow-visible relative right-[30px]"><button (click)="deleteProduct(product.id)" mat-icon-button><mat-icon>remove_circle_outline</mat-icon></button></div>
+              <div class="flex-1 text-xl">{{ product.name }}</div>
+              <div class="w-0 overflow-visible relative right-[30px]">
+                <button (click)="deleteProduct(product.id)" mat-icon-button>
+                  <mat-icon>remove_circle_outline</mat-icon>
+                </button>
+              </div>
             </div>
-            <div>{{ appTranslation().products.type }}: {{appTranslation().products[product.type]}}</div>
-            <div>{{ appTranslation().products.price }}: {{product.price | currency:'EUR':'symbol':'1.0-0'}}</div>
-            <div>{{ appTranslation().products.description }}: {{product.description}}</div>
+            <div>{{ appTranslation().products.type }}: {{ appTranslation().products[product.type] }}</div>
+            <div>{{ appTranslation().products.price }}: {{ product.price | currency: 'EUR' : 'symbol' : '1.0-0' }}</div>
+            <div>{{ appTranslation().products.description }}: {{ product.description }}</div>
           </div>
         </div>
       }

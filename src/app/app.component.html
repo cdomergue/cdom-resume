@@ -1,29 +1,53 @@
 <div class="bg-gray-200 flex flex-col text-center p-8 min-h-[100svh] overflow-x-hidden">
-    <div class="mb-4">
-        <img class="mx-auto rounded-full rythm-bass" ngSrc="assets/christophe.png" alt="Profile Picture" height="200" width="200" [priority]="true">
-    </div>
-    <div class="text-4xl font-bold mb-4 rythm-medium">
-      {{ appTranslation().name }}
-    </div>
-    <div class="text-xl mb-4 rythm-high">
-      {{  appTranslation().title }}
-    </div>
-    <div class="text-gray-700 text-md mb-8 mx-6">
-      {{ appTranslation().intro }}
-    </div>
+  <div class="mb-4">
+    <img
+      class="mx-auto rounded-full rythm-bass"
+      ngSrc="assets/christophe.png"
+      alt="Profile Picture"
+      height="200"
+      width="200"
+      [priority]="true"
+    />
+  </div>
+  <div class="text-4xl font-bold mb-4 rythm-medium">
+    {{ appTranslation().name }}
+  </div>
+  <div class="text-xl mb-4 rythm-high">
+    {{ appTranslation().title }}
+  </div>
+  <div class="text-gray-700 text-md mb-8 mx-6">
+    {{ appTranslation().intro }}
+  </div>
 
-    <div class="flex flex-row mb-4 justify-center space-x-4">
-      <button mat-flat-button [color]="rle.isActive ? 'accent' : 'primary'" routerLink="experiences" routerLinkActive #rle="routerLinkActive" class="button1">{{ appTranslation().experiences }}</button>
-      <button mat-flat-button color="primary" class="button2">{{ appTranslation().diplomas }}</button>
-      <button mat-flat-button [color]="rld.isActive ? 'accent' : 'primary'" routerLink="demos" routerLinkActive #rld="routerLinkActive" class="button3">{{ appTranslation().demos }}</button>
-    </div>
+  <div class="flex flex-row mb-4 justify-center space-x-4">
+    <button
+      mat-flat-button
+      [color]="rle.isActive ? 'accent' : 'primary'"
+      routerLink="experiences"
+      routerLinkActive
+      #rle="routerLinkActive"
+      class="button1"
+    >
+      {{ appTranslation().experiences }}
+    </button>
+    <button mat-flat-button color="primary" class="button2">{{ appTranslation().diplomas }}</button>
+    <button
+      mat-flat-button
+      [color]="rld.isActive ? 'accent' : 'primary'"
+      routerLink="demos"
+      routerLinkActive
+      #rld="routerLinkActive"
+      class="button3"
+    >
+      {{ appTranslation().demos }}
+    </button>
+  </div>
 
-    <div>
-      <router-outlet/>
-    </div>
+  <div>
+    <router-outlet />
+  </div>
 
-    <div>
-    </div>
+  <div></div>
 </div>
 <div class="fixed top-4 right-4 z-10 space-x-4">
   @if (currentLanguage() === 'english') {

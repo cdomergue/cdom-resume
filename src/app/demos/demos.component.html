@@ -1,5 +1,21 @@
 <div class="mb-4 flex space-x-4 w-full justify-center">
-  <button mat-flat-button [color]="rls.isActive ? 'accent' : 'primary'" routerLink="snake" routerLinkActive #rls="routerLinkActive">{{ appTranslation().snake.title }}</button>
-  <button mat-flat-button [color]="rlngrx.isActive ? 'accent' : 'primary'" routerLink="ngrx" routerLinkActive #rlngrx="routerLinkActive">{{ appTranslation().ngRx }}</button>
+  <button
+    mat-flat-button
+    [color]="rls.isActive ? 'accent' : 'primary'"
+    routerLink="snake"
+    routerLinkActive
+    #rls="routerLinkActive"
+  >
+    {{ appTranslation().snake.title }}
+  </button>
+  <button
+    mat-flat-button
+    [color]="rlngrx.isActive ? 'accent' : 'primary'"
+    routerLink="ngrx"
+    routerLinkActive
+    #rlngrx="routerLinkActive"
+  >
+    {{ appTranslation().ngRx }}
+  </button>
 </div>
 <router-outlet></router-outlet>
