@@ -3,6 +3,7 @@ import { LanguageService } from '../language.service';
 import { NgOptimizedImage } from '@angular/common';
 import { MarkdownComponent } from 'ngx-markdown';
 import { ExperiencesEn, ExperiencesFr } from './experiences.data';
+import { AppTranslationEn, AppTranslationFr } from '../app.data';
 
 @Component({
   selector: 'app-experiences',
@@ -15,6 +16,7 @@ import { ExperiencesEn, ExperiencesFr } from './experiences.data';
 export default class ExperiencesComponent {
   currentLanguage = inject(LanguageService).currentLanguage;
   experiences = computed(() => (this.currentLanguage() === 'french' ? ExperiencesFr : ExperiencesEn));
+  appTranslation = computed(() => (this.currentLanguage() === 'french' ? AppTranslationFr : AppTranslationEn));
 }
 
 export type Experience = {

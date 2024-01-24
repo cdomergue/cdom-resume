@@ -1,54 +1,78 @@
-<div class="bg-gray-200 flex flex-col text-center p-8 min-h-[100svh] overflow-x-hidden">
-  <div class="mb-4">
-    <img
-      class="mx-auto rounded-full rythm-bass"
-      ngSrc="assets/christophe.png"
-      alt="Profile Picture"
-      height="200"
-      width="200"
-      [priority]="true"
-    />
-  </div>
-  <div class="text-4xl font-bold mb-4 rythm-medium">
-    {{ appTranslation().name }}
-  </div>
-  <div class="text-xl mb-4 rythm-high">
-    {{ appTranslation().title }}
-  </div>
-  <div class="text-gray-700 text-md mb-8 mx-6">
-    {{ appTranslation().intro }}
-  </div>
+<mat-drawer-container>
+  <mat-drawer #drawer="matDrawer" mode="side" [(opened)]="opened" class="w-full sm:w-auto">
+    <div class="p-4">
+      <button mat-flat-button color="primary" (click)="drawer.close()">{{ appTranslation().menu.close }}</button>
+    </div>
+    <mat-nav-list>
+      <a
+        mat-list-item
+        routerLink="experiences"
+        routerLinkActive
+        #rle="routerLinkActive"
+        [activated]="rle.isActive"
+        (click)="drawer.close()"
+      >
+        {{ appTranslation().experiences }}
+      </a>
+      <a
+        mat-list-item
+        routerLink="education"
+        routerLinkActive
+        #rledu="routerLinkActive"
+        [activated]="rledu.isActive"
+        (click)="drawer.close()"
+      >
+        {{ appTranslation().education }}
+      </a>
+      <a
+        mat-list-item
+        routerLink="demos"
+        routerLinkActive
+        #rld="routerLinkActive"
+        [activated]="rld.isActive"
+        (click)="drawer.close()"
+      >
+        {{ appTranslation().demos }}
+      </a>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="bg-gray-200 flex flex-col text-center p-8 min-h-[100svh] overflow-x-hidden">
+      <div class="mb-4">
+        <img
+          class="mx-auto rounded-full rythm-bass"
+          ngSrc="assets/christophe.png"
+          alt="Profile Picture"
+          height="200"
+          width="200"
+          [priority]="true"
+        />
+      </div>
+      <div class="text-4xl font-bold mb-4 rythm-medium">
+        {{ appTranslation().name }}
+      </div>
+      <div class="text-xl mb-4 rythm-high">
+        {{ appTranslation().title }}
+      </div>
+      <div class="text-gray-700 text-md mb-8 mx-6">
+        {{ appTranslation().intro }}
+      </div>
 
-  <div class="flex flex-row mb-4 justify-center space-x-4">
-    <button
-      mat-flat-button
-      [color]="rle.isActive ? 'accent' : 'primary'"
-      routerLink="experiences"
-      routerLinkActive
-      #rle="routerLinkActive"
-      class="button1"
-    >
-      {{ appTranslation().experiences }}
-    </button>
-    <button mat-flat-button color="primary" class="button2">{{ appTranslation().diplomas }}</button>
-    <button
-      mat-flat-button
-      [color]="rld.isActive ? 'accent' : 'primary'"
-      routerLink="demos"
-      routerLinkActive
-      #rld="routerLinkActive"
-      class="button3"
-    >
-      {{ appTranslation().demos }}
-    </button>
-  </div>
+      <div>
+        <router-outlet />
+      </div>
 
-  <div>
-    <router-outlet />
-  </div>
+      <div></div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
 
-  <div></div>
-</div>
+@if (!opened) {
+  <div class="fixed top-4 left-4 z-10">
+    <button mat-flat-button color="primary" (click)="drawer.open()">{{ appTranslation().menu.open }}</button>
+  </div>
+}
+
 <div class="fixed top-4 right-4 z-10 space-x-4">
   @if (currentLanguage() === 'english') {
     <button mat-flat-button color="primary" (click)="currentLanguage.set('french')">Français</button>

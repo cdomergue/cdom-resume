@@ -5,7 +5,7 @@ export const AppTranslationFr = {
   intro: 'Développeur d’origine Full-Stack avec une grande appétence pour le développement web, spécialisé en Angular.',
   title: 'Développeur Front-End',
   experiences: 'Mes expériences',
-  diplomas: 'Études',
+  education: 'Études',
   demos: 'Démos',
   snake: {
     title: 'Snake avec Signals',
@@ -25,6 +25,10 @@ export const AppTranslationFr = {
     name: 'Nom ',
     nameRequired: 'Le nom est obligatoire',
   },
+  menu: {
+    open: 'Ouvrir Menu',
+    close: 'Fermer Menu',
+  },
 };
 
 export const AppTranslationEn = {
@@ -32,7 +36,7 @@ export const AppTranslationEn = {
   intro: 'Full-Stack developer with a strong interest in web development, specializing in Angular.',
   title: 'Front-End Developer',
   experiences: 'Work Experiences',
-  diplomas: 'Education',
+  education: 'Education',
   demos: 'Demos',
   snake: {
     title: 'Snake with Signals',
@@ -51,5 +55,9 @@ export const AppTranslationEn = {
     descriptionRequired: 'Description is required',
     name: 'Name',
     nameRequired: 'Name is required',
+  },
+  menu: {
+    open: 'Open Menu',
+    close: 'Close Menu',
   },
 };

@@ -1,4 +1,4 @@
-import { Component, computed, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, OnInit } from '@angular/core';
 import { ProductFacade } from '../../shared/store/product/product.facade';
 import { AsyncPipe, CurrencyPipe } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -30,6 +30,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   ],
   templateUrl: './ng-rx.component.html',
   styleUrl: './ng-rx.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class NgRxComponent implements OnInit {
   productFacade = inject(ProductFacade);
