@@ -14,6 +14,15 @@ export default class EducationComponent {
   currentLanguage = inject(LanguageService).currentLanguage;
   education = computed(() => (this.currentLanguage() === 'french' ? EducationFr : EducationEn));
   appTranslation = computed(() => (this.currentLanguage() === 'french' ? AppTranslationFr : AppTranslationEn));
+
+  downloadFile(filename: string): void {
+    const link = document.createElement('a');
+    link.href = `assets/${filename}`;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 }
 
 export type Education = {

@@ -1,5 +1,4 @@
 import { Education } from './education.component';
-import { randomUUID } from 'node:crypto';
 
 export const EducationFr: Education[] = [
   {
@@ -13,7 +12,7 @@ export const EducationFr: Education[] = [
     body: [
       {
         text: "École d'ingénieurs en alternance",
-        url: 'assets/diplome.pdf',
+        url: 'diplome.pdf',
       },
     ],
   },

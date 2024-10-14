@@ -36,9 +36,8 @@
           @if (body.url) {
             <div>
               <a
-                [href]="body.url"
-                target="_blank"
-                class="underline"
+                (click)="downloadFile(body.url)"
+                class="underline cursor-pointer"
                 [attr.aria-label]="'Télécharger le diplôme de ' + education.title"
               >
                 {{ appTranslation().downloadDiploma }}
