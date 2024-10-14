@@ -1,0 +1,52 @@
+<h2 [attr.aria-label]="appTranslation().education">{{ appTranslation().education }}</h2>
+@for (education of education(); track education.id) {
+  <div class="flex justify-center mt-6" role="region" [attr.aria-labelledby]="'education-' + education.id">
+    <div class="flex-col mr-16 items-center hidden sm:flex">
+      <div class="w-full mb-4" aria-label="Date de fin">{{ education.end }}</div>
+      <div class="flex-1 w-0.5 bg-black" aria-hidden="true"></div>
+      <div class="border-2 border-solid border-black p-2 rounded-full" aria-label="Durée de la formation">
+        {{ education.duration }}
+      </div>
+      <div class="flex-1 w-0.5 bg-black" aria-hidden="true"></div>
+      <div class="w-full mt-4" aria-label="Date de début">{{ education.start }}</div>
+    </div>
+
+    <div
+      class="card p-6 w-[36rem] rounded-xl shadow-md flex flex-col space-y-3 items-start"
+      id="education-{{ education.id }}"
+    >
+      <div class="w-full flex flex-col items-center space-y-2 sm:justify-between sm:flex-row">
+        <div class="font-bold text-xl" [attr.aria-label]="education.title + ' à ' + education.schoolName">
+          {{ education.title }} ({{ education.schoolName }})
+        </div>
+        <div
+          class="sm:hidden"
+          [attr.aria-label]="
+            'Dates : ' + education.start + ' - ' + education.end + ' (Durée : ' + education.duration + ')'
+          "
+        >
+          {{ education.start }} - {{ education.end }} ({{ education.duration }})
+        </div>
+        <img [src]="education.logoUrl" class="h-[31px] w-fit sm:block" [attr.alt]="'Logo de ' + education.schoolName" />
+      </div>
+
+      @for (body of education.body; track body.text) {
+        <div class="text-left" role="group" [attr.aria-labelledby]="'body-' + education.id + '-' + body.text">
+          <div id="body-{{ education.id }}-{{ body.text }}">{{ body.text }}</div>
+          @if (body.url) {
+            <div>
+              <a
+                [href]="body.url"
+                target="_blank"
+                class="underline"
+                [attr.aria-label]="'Télécharger le diplôme de ' + education.title"
+              >
+                {{ appTranslation().downloadDiploma }}
+              </a>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+}

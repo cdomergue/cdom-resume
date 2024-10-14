@@ -29,6 +29,7 @@ export const AppTranslationFr = {
     open: 'Ouvrir Menu',
     close: 'Fermer Menu',
   },
+  downloadDiploma: 'Télécharger le diplôme',
 };
 
 export const AppTranslationEn = {
@@ -60,4 +61,5 @@ export const AppTranslationEn = {
     open: 'Open Menu',
     close: 'Close Menu',
   },
+  downloadDiploma: 'Download diploma',
 };

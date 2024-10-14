@@ -1,26 +1,42 @@
-<h2>{{ appTranslation().experiences }}</h2>
+<h2 [attr.aria-label]="appTranslation().experiences">{{ appTranslation().experiences }}</h2>
 @for (experience of experiences(); track experience.id) {
-  <div class="flex justify-center mt-6">
+  <div class="flex justify-center mt-6" role="region" [attr.aria-labelledby]="'experience-' + experience.id">
     <div class="flex-col mr-16 items-center hidden sm:flex">
-      <div class="w-full mb-4">{{ experience.end }}</div>
-      <div class="flex-1 w-0.5 bg-black"></div>
-      <div class="border-2 border-solid border-black p-2 rounded-full">{{ experience.duration }}</div>
-      <div class="flex-1 w-0.5 bg-black"></div>
-      <div class="w-full mt-4">{{ experience.start }}</div>
+      <div class="w-full mb-4" aria-label="Date de fin">{{ experience.end }}</div>
+      <div class="flex-1 w-0.5 bg-black" aria-hidden="true"></div>
+      <div class="border-2 border-solid border-black p-2 rounded-full" aria-label="Durée de l'expérience">
+        {{ experience.duration }}
+      </div>
+      <div class="flex-1 w-0.5 bg-black" aria-hidden="true"></div>
+      <div class="w-full mt-4" aria-label="Date de début">{{ experience.start }}</div>
     </div>
 
-    <div class="card p-6 w-[36rem] rounded-xl shadow-md flex flex-col space-y-3 items-start">
+    <div
+      class="card p-6 w-[36rem] rounded-xl shadow-md flex flex-col space-y-3 items-start"
+      id="experience-{{ experience.id }}"
+    >
       <div class="w-full flex flex-col items-center space-y-2 sm:justify-between sm:flex-row">
-        <div class="font-bold text-xl">
-          {{ experience.title }}
+        <div class="font-bold text-xl" [attr.aria-label]="experience.title + ' chez ' + experience.companyName">
+          {{ experience.title }} ({{ experience.companyName }})
         </div>
-        <div class="sm:hidden">{{ experience.start }} - {{ experience.end }} ({{ experience.duration }})</div>
-        <img [src]="experience.logoUrl" class="h-[31px] w-fit sm:block" [attr.alt]="experience.companyName" />
+        <div
+          class="sm:hidden"
+          [attr.aria-label]="
+            'Dates : ' + experience.start + ' - ' + experience.end + ' (Durée : ' + experience.duration + ')'
+          "
+        >
+          {{ experience.start }} - {{ experience.end }} ({{ experience.duration }})
+        </div>
+        <img
+          [src]="experience.logoUrl"
+          class="h-[31px] w-fit sm:block"
+          [attr.alt]="'Logo de ' + experience.companyName"
+        />
       </div>
 
       @for (body of experience.body; track body.title) {
-        <div class="text-left">
-          <div class="underline">{{ body.title }}</div>
+        <div class="text-left" role="group" [attr.aria-labelledby]="'body-' + experience.id + '-' + body.title">
+          <div class="underline" id="body-{{ experience.id }}-{{ body.title }}">{{ body.title }}</div>
           <markdown>{{ body.text }}</markdown>
         </div>
       }

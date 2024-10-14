@@ -1,9 +1,18 @@
 <mat-drawer-container>
-  <mat-drawer #drawer="matDrawer" mode="side" [(opened)]="opened" class="w-full sm:w-auto">
+  <mat-drawer
+    #drawer="matDrawer"
+    mode="side"
+    [(opened)]="opened"
+    role="navigation"
+    aria-label="Menu de navigation"
+    class="w-full sm:w-auto"
+  >
     <div class="p-4">
-      <button mat-flat-button color="primary" (click)="drawer.close()">{{ appTranslation().menu.close }}</button>
+      <button mat-flat-button color="primary" (click)="drawer.close()" aria-label="Fermer le menu">
+        {{ appTranslation().menu.close }}
+      </button>
     </div>
-    <mat-nav-list>
+    <mat-nav-list role="list">
       <a
         mat-list-item
         routerLink="experiences"
@@ -11,6 +20,8 @@
         #rle="routerLinkActive"
         [activated]="rle.isActive"
         (click)="drawer.close()"
+        role="listitem"
+        aria-label="Aller à la page Expériences"
       >
         {{ appTranslation().experiences }}
       </a>
@@ -21,18 +32,10 @@
         #rledu="routerLinkActive"
         [activated]="rledu.isActive"
         (click)="drawer.close()"
+        role="listitem"
+        aria-label="Aller à la page Études"
       >
         {{ appTranslation().education }}
-      </a>
-      <a
-        mat-list-item
-        routerLink="demos"
-        routerLinkActive
-        #rld="routerLinkActive"
-        [activated]="rld.isActive"
-        (click)="drawer.close()"
-      >
-        {{ appTranslation().demos }}
       </a>
     </mat-nav-list>
   </mat-drawer>
@@ -41,8 +44,8 @@
       <div class="mb-4">
         <img
           class="mx-auto rounded-full rythm-bass"
-          ngSrc="assets/christophe.png"
-          alt="Profile Picture"
+          ngSrc="assets/christophe.jpg"
+          alt="Portrait de Christophe Domergue"
           height="200"
           width="200"
           [priority]="true"
@@ -67,17 +70,36 @@
   </mat-drawer-content>
 </mat-drawer-container>
 
-@if (!opened) {
-  <div class="fixed top-4 left-4 z-10">
-    <button mat-flat-button color="primary" (click)="drawer.open()">{{ appTranslation().menu.open }}</button>
-  </div>
-}
+<div *ngIf="!opened" class="fixed top-4 left-4 z-10">
+  <button mat-flat-button color="primary" (click)="drawer.open()" aria-label="Ouvrir le menu">
+    {{ appTranslation().menu.open }}
+  </button>
+</div>
 
 <div class="fixed top-4 right-4 z-10 space-x-4">
-  @if (currentLanguage() === 'english') {
-    <button mat-flat-button color="primary" (click)="currentLanguage.set('french')">Français</button>
-  } @else {
-    <button mat-flat-button color="primary" (click)="currentLanguage.set('english')">English</button>
-  }
-  <a href="https://github.com/cdomergue/cdom-resume" mat-flat-button color="primary" target="_blank">Github</a>
+  <button
+    *ngIf="currentLanguage() === 'english'"
+    mat-flat-button
+    color="primary"
+    (click)="currentLanguage.set('french')"
+  >
+    Français
+  </button>
+  <button
+    *ngIf="currentLanguage() !== 'english'"
+    mat-flat-button
+    color="primary"
+    (click)="currentLanguage.set('english')"
+  >
+    English
+  </button>
+  <a
+    href="https://github.com/cdomergue/cdom-resume"
+    mat-flat-button
+    color="primary"
+    target="_blank"
+    aria-label="Voir le projet sur Github"
+  >
+    Github
+  </a>
 </div>

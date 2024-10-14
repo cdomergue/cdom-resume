@@ -14,6 +14,14 @@ export const ExperiencesFr: Experience[] = [
         title: 'Contexte',
         text: "Mission de développement Angular pour un projet de gestion d'actif bancaire lié aux activités de Credit Corpoate.",
       },
+      {
+        title: 'Environnement technique',
+        text:
+          'Angular 18, NX, Module Federation, ngneat/spectator,' +
+          ' Java 18, Spring Boot, Maven, Jenkins,' +
+          ' Oracle SQL,' +
+          ' Bitbucket, Confluence, JIRA',
+      },
     ],
   },
   {
@@ -107,6 +115,14 @@ export const ExperiencesEn: Experience[] = [
       {
         title: 'Context',
         text: 'Angular development mission for a banking asset management project related to Credit Corporate activities.',
+      },
+      {
+        title: 'Technical environment',
+        text:
+          'Angular 18, NX, Module Federation, ngneat/spectator,' +
+          ' Java 18, Spring Boot, Maven, Jenkins,' +
+          ' Oracle SQL,' +
+          ' Bitbucket, Confluence, JIRA',
       },
     ],
   },
