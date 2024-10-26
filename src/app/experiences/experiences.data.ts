@@ -12,7 +12,7 @@ export const ExperiencesFr: Experience[] = [
     body: [
       {
         title: 'Contexte',
-        text: "Mission de développement Angular pour un projet de gestion d'actif bancaire lié aux activités de Credit Corpoate.",
+        text: "Mission de développement Angular pour un projet de gestion d'actif bancaire lié aux activités de Credit Corporate.",
       },
       {
         title: 'Environnement technique',
