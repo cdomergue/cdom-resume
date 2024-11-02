@@ -12,7 +12,7 @@ export const EducationFr: Education[] = [
     body: [
       {
         text: "École d'ingénieurs en alternance",
-        url: 'diplome.pdf',
+        url: 'https://drive.google.com/file/d/1xkAWjx11cmdhVMvXbUTbzZqJJk8-txdg/view?usp=sharing',
       },
     ],
   },
@@ -44,7 +44,7 @@ export const EducationEn: Education[] = [
     body: [
       {
         text: 'Engineering school with a work-study program',
-        url: 'assets/diplome.pdf',
+        url: 'https://drive.google.com/file/d/1xkAWjx11cmdhVMvXbUTbzZqJJk8-txdg/view?usp=sharing',
       },
     ],
   },
