@@ -10,6 +10,7 @@ Passionné par le développement web, je m'efforce d'offrir des solutions modern
   title: 'Développeur Front-End',
   experiences: 'Mes expériences',
   education: 'Études',
+  contact: 'Contact',
   menu: {
     open: 'Ouvrir Menu',
     close: 'Fermer Menu',
@@ -29,6 +30,7 @@ Passionate about web development, I strive to provide modern and efficient solut
   title: 'Front-End Developer',
   experiences: 'Work Experiences',
   education: 'Education',
+  contact: 'Contact',
   menu: {
     open: 'Open Menu',
     close: 'Close Menu',

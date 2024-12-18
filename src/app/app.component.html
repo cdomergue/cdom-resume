@@ -5,39 +5,53 @@
     [(opened)]="opened"
     role="navigation"
     aria-label="Menu de navigation"
-    class="w-full sm:w-auto"
+    class="w-full sm:w-auto fixed-drawer"
   >
-    <div class="p-4">
-      <button mat-flat-button color="primary" (click)="drawer.close()" aria-label="Fermer le menu">
-        {{ appTranslation().menu.close }}
-      </button>
+    <div class="drawer-content">
+      <div class="p-4">
+        <button mat-flat-button color="primary" (click)="drawer.close()" aria-label="Fermer le menu">
+          {{ appTranslation().menu.close }}
+        </button>
+      </div>
+      <mat-nav-list role="list">
+        <a
+          mat-list-item
+          routerLink="experiences"
+          routerLinkActive
+          #rle="routerLinkActive"
+          [activated]="rle.isActive"
+          (click)="drawer.close()"
+          role="listitem"
+          aria-label="Aller à la page Expériences"
+        >
+          {{ appTranslation().experiences }}
+        </a>
+        <a
+          mat-list-item
+          routerLink="education"
+          routerLinkActive
+          #rledu="routerLinkActive"
+          [activated]="rledu.isActive"
+          (click)="drawer.close()"
+          role="listitem"
+          aria-label="Aller à la page Études"
+        >
+          {{ appTranslation().education }}
+        </a>
+        <a
+          mat-list-item
+          routerLink="contact"
+          routerLinkActive
+          #rlContact="routerLinkActive"
+          [activated]="rlContact.isActive"
+          (click)="drawer.close()"
+          role="listitem"
+          aria-label="Contact"
+        >
+          {{ appTranslation().contact }}
+        </a>
+      </mat-nav-list>
     </div>
-    <mat-nav-list role="list">
-      <a
-        mat-list-item
-        routerLink="experiences"
-        routerLinkActive
-        #rle="routerLinkActive"
-        [activated]="rle.isActive"
-        (click)="drawer.close()"
-        role="listitem"
-        aria-label="Aller à la page Expériences"
-      >
-        {{ appTranslation().experiences }}
-      </a>
-      <a
-        mat-list-item
-        routerLink="education"
-        routerLinkActive
-        #rledu="routerLinkActive"
-        [activated]="rledu.isActive"
-        (click)="drawer.close()"
-        role="listitem"
-        aria-label="Aller à la page Études"
-      >
-        {{ appTranslation().education }}
-      </a>
-    </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content>
     <div class="bg-gray-200 flex flex-col text-center p-8 min-h-[100svh] overflow-x-hidden">

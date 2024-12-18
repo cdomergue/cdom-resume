@@ -1,0 +1,28 @@
+<div class="max-w-2xl mx-auto p-8 bg-white rounded-lg shadow-md">
+  <h2 class="text-3xl font-bold mb-6 text-gray-800">{{ contact().title }}</h2>
+
+  <p class="mb-8 text-lg text-gray-600 leading-relaxed">
+    {{ contact().description }}
+  </p>
+
+  <div class="mb-8">
+    <button
+      (click)="copyEmailToClipboard()"
+      class="w-full py-3 px-6 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out"
+    >
+      {{ contact().buttonText }}
+    </button>
+  </div>
+
+  <p class="text-sm text-gray-500 leading-relaxed">
+    {{ contact().note }}
+  </p>
+</div>
+
+@if (showPopup()) {
+  <div class="fixed inset-0 flex items-center justify-center z-50">
+    <div class="bg-indigo-500 text-white pt-6 pb-4 px-4 rounded-lg shadow-xl border border-blue-600 flex items-center">
+      <p class="text-lg font-semibold">{{ contact().copySuccess }}</p>
+    </div>
+  </div>
+}

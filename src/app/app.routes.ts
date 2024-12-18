@@ -16,4 +16,9 @@ export const routes: Routes = [
     loadComponent: () => import('./education/education.component'),
     title: 'Études - Christophe Domergue',
   },
+  {
+    path: 'contact',
+    loadComponent: () => import('./contact/contact.component'),
+    title: 'Contact - Christophe Domergue',
+  },
 ];
