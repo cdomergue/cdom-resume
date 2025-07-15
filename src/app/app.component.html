@@ -6,7 +6,7 @@
     role="navigation"
     aria-label="Menu de navigation"
     class="w-full sm:w-auto fixed-drawer"
-  >
+    >
     <div class="drawer-content">
       <div class="p-4">
         <button mat-flat-button color="primary" (click)="drawer.close()" aria-label="Fermer le menu">
@@ -23,7 +23,7 @@
           (click)="drawer.close()"
           role="listitem"
           aria-label="Aller à la page Expériences"
-        >
+          >
           {{ appTranslation().experiences }}
         </a>
         <a
@@ -35,7 +35,7 @@
           (click)="drawer.close()"
           role="listitem"
           aria-label="Aller à la page Études"
-        >
+          >
           {{ appTranslation().education }}
         </a>
         <a
@@ -47,7 +47,7 @@
           (click)="drawer.close()"
           role="listitem"
           aria-label="Contact"
-        >
+          >
           {{ appTranslation().contact }}
         </a>
       </mat-nav-list>
@@ -63,7 +63,7 @@
           height="200"
           width="200"
           [priority]="true"
-        />
+          />
       </div>
       <div class="text-4xl font-bold mb-4 rythm-medium">
         {{ appTranslation().name }}
@@ -71,7 +71,7 @@
       <div class="text-xl mb-4 rythm-high">
         {{ appTranslation().title }}
       </div>
-    
+
       <div>
         <router-outlet />
       </div>
@@ -81,27 +81,31 @@
   </mat-drawer-content>
 </mat-drawer-container>
 
-<div *ngIf="!opened" class="fixed top-4 left-4 z-10">
-  <button mat-flat-button color="primary" (click)="drawer.open()" aria-label="Ouvrir le menu">
-    {{ appTranslation().menu.open }}
-  </button>
-</div>
+@if (!opened) {
+  <div class="fixed top-4 left-4 z-10">
+    <button mat-flat-button color="primary" (click)="drawer.open()" aria-label="Ouvrir le menu">
+      {{ appTranslation().menu.open }}
+    </button>
+  </div>
+}
 
 <div class="fixed top-4 right-4 z-10 space-x-4">
-  <button
-    *ngIf="currentLanguage() === 'english'"
-    mat-flat-button
-    color="primary"
-    (click)="currentLanguage.set('french')"
-  >
-    Français
-  </button>
-  <button
-    *ngIf="currentLanguage() !== 'english'"
-    mat-flat-button
-    color="primary"
-    (click)="currentLanguage.set('english')"
-  >
-    English
-  </button>
+  @if (currentLanguage() === 'english') {
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="currentLanguage.set('french')"
+      >
+      Français
+    </button>
+  }
+  @if (currentLanguage() !== 'english') {
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="currentLanguage.set('english')"
+      >
+      English
+    </button>
+  }
 </div>

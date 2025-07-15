@@ -1,13 +1,12 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { LanguageService } from '../language.service';
-import { NgOptimizedImage } from '@angular/common';
 import { MarkdownComponent } from 'ngx-markdown';
 import { ExperiencesEn, ExperiencesFr } from './experiences.data';
 import { AppTranslationEn, AppTranslationFr } from '../app.data';
 
 @Component({
     selector: 'app-experiences',
-    imports: [NgOptimizedImage, MarkdownComponent],
+    imports: [MarkdownComponent],
     templateUrl: './experiences.component.html',
     styleUrls: ['experiences.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush

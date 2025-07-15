@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { LanguageService } from './language.service';
@@ -10,15 +10,14 @@ import { MatListModule } from '@angular/material/list';
 @Component({
     selector: 'app-root',
     imports: [
-        CommonModule,
-        RouterOutlet,
-        NgOptimizedImage,
-        MatButtonModule,
-        RouterLink,
-        RouterLinkActive,
-        MatSidenavModule,
-        MatListModule,
-    ],
+    RouterOutlet,
+    NgOptimizedImage,
+    MatButtonModule,
+    RouterLink,
+    RouterLinkActive,
+    MatSidenavModule,
+    MatListModule
+],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush
