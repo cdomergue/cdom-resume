@@ -8,21 +8,20 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    NgOptimizedImage,
-    MatButtonModule,
-    RouterLink,
-    RouterLinkActive,
-    MatSidenavModule,
-    MatListModule,
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-root',
+    imports: [
+        CommonModule,
+        RouterOutlet,
+        NgOptimizedImage,
+        MatButtonModule,
+        RouterLink,
+        RouterLinkActive,
+        MatSidenavModule,
+        MatListModule,
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   opened = false;
