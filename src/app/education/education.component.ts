@@ -15,7 +15,7 @@ export default class EducationComponent {
 }
 
 export type Education = {
-  id: string;
+  id: number;
   title: string;
   body: { text: string; url?: string }[];
   logoUrl: string;

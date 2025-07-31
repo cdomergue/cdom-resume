@@ -2,7 +2,7 @@ import { Education } from './education.component';
 
 export const EducationFr: Education[] = [
   {
-    id: '1',
+    id: 1,
     duration: '3 ans',
     start: 'Septembre 2014',
     end: 'Juin 2017',
@@ -17,7 +17,7 @@ export const EducationFr: Education[] = [
     ],
   },
   {
-    id: '2',
+    id: 2,
     duration: '2 ans',
     start: 'Septembre 2012',
     end: 'Juin 2014',
@@ -34,7 +34,7 @@ export const EducationFr: Education[] = [
 
 export const EducationEn: Education[] = [
   {
-    id: '1',
+    id: 1,
     duration: '3 years',
     start: 'September 2014',
     end: 'June 2017',
@@ -49,7 +49,7 @@ export const EducationEn: Education[] = [
     ],
   },
   {
-    id: '2',
+    id: 2,
     duration: '2 years',
     start: 'September 2012',
     end: 'June 2014',

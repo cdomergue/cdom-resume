@@ -9,13 +9,19 @@ Passionné par le développement web, je m'efforce d'offrir des solutions modern
 `,
   title: 'Développeur Front-End',
   experiences: 'Mes expériences',
-  education: 'Études',
+  education: {
+    title: 'Études',
+    startDate: 'Date de début',
+    endDate: 'Date de fin',
+    duration: 'Durée de la formation'
+  },
   contact: 'Contact',
   menu: {
     open: 'Ouvrir Menu',
     close: 'Fermer Menu',
   },
   downloadDiploma: 'Télécharger le diplôme',
+  duration: 'Durée '
 };
 
 export const AppTranslationEn = {
@@ -29,11 +35,17 @@ Passionate about web development, I strive to provide modern and efficient solut
 `,
   title: 'Front-End Developer',
   experiences: 'Work Experiences',
-  education: 'Education',
+  education: {
+    title: 'Education',
+    startDate: 'Start Date',
+    endDate: 'End Date',
+    duration: 'Education duration'
+  },
   contact: 'Contact',
   menu: {
     open: 'Open Menu',
     close: 'Close Menu',
   },
   downloadDiploma: 'Download diploma',
+  duration: 'Duration'
 };

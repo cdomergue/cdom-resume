@@ -1,14 +1,14 @@
-<h2 [attr.aria-label]="appTranslation().education">{{ appTranslation().education }}</h2>
+<h2 [attr.aria-label]="appTranslation().education.title">{{ appTranslation().education.title }}</h2>
 @for (education of education(); track education.id) {
   <div class="flex justify-center mt-6" role="region" [attr.aria-labelledby]="'education-' + education.id">
     <div class="flex-col mr-16 items-center hidden sm:flex">
-      <div class="w-full mb-4" aria-label="Date de fin">{{ education.end }}</div>
+      <div class="w-full mb-4" [attr.aria-label]="appTranslation().education.endDate">{{ education.end }}</div>
       <div class="flex-1 w-0.5 bg-black" aria-hidden="true"></div>
-      <div class="border-2 border-solid border-black p-2 rounded-full" aria-label="Durée de la formation">
+      <div class="border-2 border-solid border-black p-2 rounded-full" [attr.aria-label]="appTranslation().education.duration">
         {{ education.duration }}
       </div>
       <div class="flex-1 w-0.5 bg-black" aria-hidden="true"></div>
-      <div class="w-full mt-4" aria-label="Date de début">{{ education.start }}</div>
+      <div class="w-full mt-4" [attr.aria-label]="appTranslation().education.startDate">{{ education.start }}</div>
     </div>
 
     <div
@@ -22,7 +22,7 @@
         <div
           class="sm:hidden"
           [attr.aria-label]="
-            'Dates : ' + education.start + ' - ' + education.end + ' (Durée : ' + education.duration + ')'
+            'Dates : ' + education.start + ' - ' + education.end + ' (' + appTranslation().duration + ': ' + education.duration + ')'
           "
         >
           {{ education.start }} - {{ education.end }} ({{ education.duration }})
@@ -39,7 +39,7 @@
                 [href]="body.url"
                 target="_blank"
                 class="underline cursor-pointer"
-                [attr.aria-label]="'Télécharger le diplôme de ' + education.title"
+                [attr.aria-label]="appTranslation().downloadDiploma + ' ' + education.title"
               >
                 {{ appTranslation().downloadDiploma }}
               </a>
