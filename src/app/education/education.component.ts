@@ -4,9 +4,9 @@ import { AppTranslationEn, AppTranslationFr } from '../app.data';
 import { EducationEn, EducationFr } from './education.data';
 
 @Component({
-    selector: 'app-education',
-    templateUrl: './education.component.html',
-    styleUrl: './education.component.scss'
+  selector: 'app-education',
+  templateUrl: './education.component.html',
+  styleUrl: './education.component.scss',
 })
 export default class EducationComponent {
   currentLanguage = inject(LanguageService).currentLanguage;

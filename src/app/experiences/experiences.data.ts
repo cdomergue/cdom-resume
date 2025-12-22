@@ -12,8 +12,9 @@ export const ExperiencesFr: Experience[] = [
     body: [
       {
         title: 'Contexte',
-        text: "Front Expert assistant le tech-lead. Mission de développement Angular pour un projet de gestion d'actif " +
-          "bancaire lié aux activités de Credit Corporate. Nombreux micro front-ends avec Module Federation.",
+        text:
+          "Front Expert assistant le tech-lead. Mission de développement Angular pour un projet de gestion d'actif " +
+          'bancaire lié aux activités de Credit Corporate. Nombreux micro front-ends avec Module Federation.',
       },
       {
         title: 'Environnement technique',
@@ -115,7 +116,8 @@ export const ExperiencesEn: Experience[] = [
     body: [
       {
         title: 'Context',
-        text: 'Expert Frontend assisting the Tech Lead. Angular development mission for a banking asset management ' +
+        text:
+          'Expert Frontend assisting the Tech Lead. Angular development mission for a banking asset management ' +
           'project related to Corporate Credit activities. Numerous micro front-ends using Module Federation.',
       },
       {

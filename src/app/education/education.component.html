@@ -4,7 +4,10 @@
     <div class="flex-col mr-16 items-center hidden sm:flex">
       <div class="w-full mb-4" [attr.aria-label]="appTranslation().education.endDate">{{ education.end }}</div>
       <div class="flex-1 w-0.5 bg-black" aria-hidden="true"></div>
-      <div class="border-2 border-solid border-black p-2 rounded-full" [attr.aria-label]="appTranslation().education.duration">
+      <div
+        class="border-2 border-solid border-black p-2 rounded-full"
+        [attr.aria-label]="appTranslation().education.duration"
+      >
         {{ education.duration }}
       </div>
       <div class="flex-1 w-0.5 bg-black" aria-hidden="true"></div>
@@ -22,7 +25,15 @@
         <div
           class="sm:hidden"
           [attr.aria-label]="
-            'Dates : ' + education.start + ' - ' + education.end + ' (' + appTranslation().duration + ': ' + education.duration + ')'
+            'Dates : ' +
+            education.start +
+            ' - ' +
+            education.end +
+            ' (' +
+            appTranslation().duration +
+            ': ' +
+            education.duration +
+            ')'
           "
         >
           {{ education.start }} - {{ education.end }} ({{ education.duration }})

@@ -6,24 +6,30 @@ import { LanguageService } from './language.service';
 import { AppTranslationEn, AppTranslationFr } from './app.data';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { PdfService } from './shared/pdf.service';
 
 @Component({
-    selector: 'app-root',
-    imports: [
+  selector: 'app-root',
+  imports: [
     RouterOutlet,
     NgOptimizedImage,
     MatButtonModule,
     RouterLink,
     RouterLinkActive,
     MatSidenavModule,
-    MatListModule
-],
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+    MatListModule,
+  ],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   opened = false;
   currentLanguage = inject(LanguageService).currentLanguage;
   appTranslation = computed(() => (this.currentLanguage() === 'french' ? AppTranslationFr : AppTranslationEn));
+  private pdfService = inject(PdfService);
+
+  downloadPdf() {
+    this.pdfService.generatePdf(this.currentLanguage());
+  }
 }

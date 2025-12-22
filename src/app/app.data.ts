@@ -13,7 +13,7 @@ Passionné par le développement web, je m'efforce d'offrir des solutions modern
     title: 'Études',
     startDate: 'Date de début',
     endDate: 'Date de fin',
-    duration: 'Durée de la formation'
+    duration: 'Durée de la formation',
   },
   contact: 'Contact',
   menu: {
@@ -21,7 +21,8 @@ Passionné par le développement web, je m'efforce d'offrir des solutions modern
     close: 'Fermer Menu',
   },
   downloadDiploma: 'Télécharger le diplôme',
-  duration: 'Durée '
+  downloadPdf: 'Télécharger le PDF',
+  duration: 'Durée ',
 };
 
 export const AppTranslationEn = {
@@ -39,7 +40,7 @@ Passionate about web development, I strive to provide modern and efficient solut
     title: 'Education',
     startDate: 'Start Date',
     endDate: 'End Date',
-    duration: 'Education duration'
+    duration: 'Education duration',
   },
   contact: 'Contact',
   menu: {
@@ -47,5 +48,6 @@ Passionate about web development, I strive to provide modern and efficient solut
     close: 'Close Menu',
   },
   downloadDiploma: 'Download diploma',
-  duration: 'Duration'
+  downloadPdf: 'Download PDF',
+  duration: 'Duration',
 };
