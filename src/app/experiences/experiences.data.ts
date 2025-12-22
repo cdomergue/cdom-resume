@@ -6,18 +6,19 @@ export const ExperiencesFr: Experience[] = [
     duration: 'En cours',
     start: 'Janvier 2024',
     end: '',
-    title: 'Développeur Angular',
+    title: 'Front-end Expert Angular',
     logoUrl: 'assets/logo-bnp.png',
-    companyName: 'BNP Paribas',
+    companyName: 'BNP Paribas CIB',
     body: [
       {
         title: 'Contexte',
-        text: "Mission de développement Angular pour un projet de gestion d'actif bancaire lié aux activités de Credit Corporate.",
+        text: "Front Expert assistant le tech-lead. Mission de développement Angular pour un projet de gestion d'actif " +
+          "bancaire lié aux activités de Credit Corporate. Nombreux micro front-ends avec Module Federation.",
       },
       {
         title: 'Environnement technique',
         text:
-          'Angular 18, NX, Module Federation, ngneat/spectator,' +
+          'Angular 20, NX, Module Federation, ngneat/spectator,' +
           ' Java 18, Spring Boot, Maven, Jenkins,' +
           ' Oracle SQL,' +
           ' Bitbucket, Confluence, JIRA',
@@ -108,18 +109,19 @@ export const ExperiencesEn: Experience[] = [
     duration: 'Ongoing',
     start: 'January 2024',
     end: '',
-    title: 'Angular Developer',
+    title: 'Angular Front-end Expert',
     logoUrl: 'assets/logo-bnp.png',
     companyName: 'BNP Paribas CIB',
     body: [
       {
         title: 'Context',
-        text: 'Angular development mission for a banking asset management project related to Credit Corporate activities.',
+        text: 'Expert Frontend assisting the Tech Lead. Angular development mission for a banking asset management ' +
+          'project related to Corporate Credit activities. Numerous micro front-ends using Module Federation.',
       },
       {
         title: 'Technical environment',
         text:
-          'Angular 18, NX, Module Federation, ngneat/spectator,' +
+          'Angular 20, NX, Module Federation, ngneat/spectator,' +
           ' Java 18, Spring Boot, Maven, Jenkins,' +
           ' Oracle SQL,' +
           ' Bitbucket, Confluence, JIRA',
