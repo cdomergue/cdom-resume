@@ -1,13 +1,12 @@
 export const AppTranslationFr = {
   name: 'Christophe Domergue',
-  intro: `Je suis un développeur front-end spécialisé en Angular avec une expérience full-stack.
+  intro: `Lead Developer, expert Angular et en développement agentique, je combine une expérience full-stack avec le pilotage d'agents IA pour concevoir et développer des applications.
 
-J'ai travaillé sur des projets complexes dans les secteurs bancaire et de la télématique embarquée, menant des refontes UI/UX et des migrations technologiques importantes.
-J'ai également pris des responsabilités de co-lead technique, garantissant la qualité et la performance des projets.
+Chez BNP Paribas CIB, je pilote le développement d'une application qui transforme un ticket JIRA en pull request prête pour une revue humaine, en s'appuyant sur des modèles d'IA internes. Je développe cette application en Python par orchestration de plusieurs agents dans Claude Code.
 
-Passionné par le développement web, je m'efforce d'offrir des solutions modernes et efficaces pour répondre aux besoins de mes clients.
+Mon parcours dans la banque et la télématique embarquée couvre également le leadership technique front-end, les architectures micro-frontends, les refontes UI/UX et les migrations Angular.
 `,
-  title: 'Développeur Front-End',
+  title: 'Lead Developer | Angular & IA agentique',
   experiences: 'Mes expériences',
   education: {
     title: 'Études',
@@ -27,14 +26,13 @@ Passionné par le développement web, je m'efforce d'offrir des solutions modern
 
 export const AppTranslationEn = {
   name: 'Christophe Domergue',
-  intro: `I am a front-end developer specialized in Angular with full-stack experience.
+  intro: `A Lead Developer with expertise in Angular and agentic development, I combine full-stack experience with hands-on orchestration of AI agents to design and build applications.
 
-I have worked on complex projects in the banking and embedded telematics sectors, leading UI/UX redesigns and significant technological migrations.
-I have also taken on co-lead technical responsibilities, ensuring the quality and performance of the projects.
+At BNP Paribas CIB, I lead the development of an application that turns a JIRA ticket into a pull request ready for human review, using internal AI models. I build this Python application by orchestrating multiple agents in Claude Code.
 
-Passionate about web development, I strive to provide modern and efficient solutions to meet my clients' needs.
+My background in banking and embedded telematics also includes front-end technical leadership, micro-frontend architectures, UI/UX redesigns and Angular migrations.
 `,
-  title: 'Front-End Developer',
+  title: 'Lead Developer | Angular & Agentic AI',
   experiences: 'Work Experiences',
   education: {
     title: 'Education',

@@ -6,12 +6,24 @@ export const ExperiencesFr: Experience[] = [
     duration: 'En cours',
     start: 'Janvier 2024',
     end: '',
-    title: 'Lead Technique Front-End / Expert Angular',
+    title: 'Lead Developer / Angular & IA agentique',
     logoUrl: 'assets/logo-bnp.png',
     companyName: 'BNP Paribas CIB',
     body: [
       {
-        title: 'Contexte',
+        title: 'Lead Developer — Automatisation du ticket JIRA à la PR',
+        text:
+          "Pilotage technique du développement d'une application qui automatise la réalisation de tickets JIRA : " +
+          "à partir d'un ticket, elle produit une pull request prête pour une revue humaine, en s'appuyant sur des modèles d'IA internes.",
+      },
+      {
+        title: 'Expertise en développement agentique',
+        text:
+          'Développement intégral de cette application avec Claude Code par orchestration de plusieurs agents IA. ' +
+          'Pilotage des agents pour la réalisation du code Python et coordination de leurs contributions.',
+      },
+      {
+        title: 'Lead technique Front-End — Corporate Credit',
         text:
           "Co-pilotage technique de la stratégie Front-End en binôme avec le Tech Lead. Conception d'une architecture " +
           "distribuée (Micro-Frontends) pour une plateforme de gestion d'actifs (Corporate Credit). " +
@@ -20,7 +32,8 @@ export const ExperiencesFr: Experience[] = [
       {
         title: 'Environnement technique',
         text:
-          'Angular 20, NX (Monorepo), Module Federation, RxJS, ngneat/spectator, ' +
+          'Claude Code, orchestration multi-agents, Python (code produit par les agents IA), modèles d’IA internes, ' +
+          'Angular 22, NX (Monorepo), Module Federation, RxJS, ngneat/spectator, ' +
           'Java 18, Spring Boot, Maven, Jenkins, ' +
           'Oracle SQL, ' +
           'Bitbucket, Confluence, JIRA',
@@ -111,12 +124,24 @@ export const ExperiencesEn: Experience[] = [
     duration: 'Ongoing',
     start: 'January 2024',
     end: '',
-    title: 'Front-End Technical Lead / Angular Expert',
+    title: 'Lead Developer / Angular & Agentic AI',
     logoUrl: 'assets/logo-bnp.png',
     companyName: 'BNP Paribas CIB',
     body: [
       {
-        title: 'Context',
+        title: 'Lead Developer — From JIRA ticket to pull request',
+        text:
+          'Technical leadership of an application that automates the implementation of JIRA tickets: ' +
+          'given a ticket, it produces a pull request ready for human review, using internal AI models.',
+      },
+      {
+        title: 'Agentic development expertise',
+        text:
+          'Development of the entire application with Claude Code by orchestrating multiple AI agents. ' +
+          'Directing agents to produce the Python code and coordinating their contributions.',
+      },
+      {
+        title: 'Front-End Technical Lead — Corporate Credit',
         text:
           'Technical co-leadership of the Front-End strategy alongside the Tech Lead. Design of a distributed ' +
           'architecture (Micro-Frontends) for an asset management platform (Corporate Credit). ' +
@@ -125,7 +150,8 @@ export const ExperiencesEn: Experience[] = [
       {
         title: 'Technical environment',
         text:
-          'Angular 20, NX (Monorepo), Module Federation, RxJS, ngneat/spectator, ' +
+          'Claude Code, multi-agent orchestration, Python (code produced by AI agents), internal AI models, ' +
+          'Angular 22, NX (Monorepo), Module Federation, RxJS, ngneat/spectator, ' +
           'Java 18, Spring Boot, Maven, Jenkins, ' +
           'Oracle SQL, ' +
           'Bitbucket, Confluence, JIRA',
