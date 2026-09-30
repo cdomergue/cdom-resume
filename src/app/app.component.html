@@ -40,6 +40,18 @@
         </a>
         <a
           mat-list-item
+          routerLink="about"
+          routerLinkActive
+          #rlAbout="routerLinkActive"
+          [activated]="rlAbout.isActive"
+          (click)="drawer.close()"
+          role="listitem"
+          [attr.aria-label]="appTranslation().about"
+        >
+          {{ appTranslation().about }}
+        </a>
+        <a
+          mat-list-item
           routerLink="contact"
           routerLinkActive
           #rlContact="routerLinkActive"

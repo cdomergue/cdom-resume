@@ -3,6 +3,7 @@ import { jsPDF } from 'jspdf';
 import { ExperiencesEn, ExperiencesFr } from '../experiences/experiences.data';
 import { EducationEn, EducationFr } from '../education/education.data';
 import { AppTranslationEn, AppTranslationFr } from '../app.data';
+import { AboutEn, AboutFr } from '../about/about.data';
 
 @Injectable({
   providedIn: 'root',
@@ -14,6 +15,7 @@ export class PdfService {
     const experiences = isFrench ? ExperiencesFr : ExperiencesEn;
     const education = isFrench ? EducationFr : EducationEn;
     const translations = isFrench ? AppTranslationFr : AppTranslationEn;
+    const about = isFrench ? AboutFr : AboutEn;
 
     let yPos = 20;
     const leftMargin = 20;
@@ -118,6 +120,40 @@ export class PdfService {
         yPos += splitText.length * 5 + 2;
       });
       yPos += 5;
+    });
+
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(11);
+    const aboutParagraphs = [
+      { title: '', text: about.intro },
+      { title: '', text: about.description },
+      ...about.interests,
+    ].map((item) => ({ ...item, lines: doc.splitTextToSize(item.text, 170) as string[] }));
+    const aboutHeight =
+      10 + aboutParagraphs.reduce((height, item) => height + (item.title ? 5 : 0) + item.lines.length * 5 + 3, 0);
+
+    yPos += 5;
+    if (yPos + aboutHeight > 280) {
+      doc.addPage();
+      yPos = 20;
+    }
+
+    doc.setFontSize(18);
+    doc.setTextColor(0, 0, 255);
+    doc.text(about.title, leftMargin, yPos);
+    doc.setTextColor(0, 0, 0);
+    doc.setFontSize(11);
+    yPos += 10;
+
+    aboutParagraphs.forEach((item) => {
+      if (item.title) {
+        doc.setFont('helvetica', 'bold');
+        doc.text(item.title, leftMargin + 5, yPos);
+        doc.setFont('helvetica', 'normal');
+        yPos += 5;
+      }
+      doc.text(item.lines, leftMargin + 5, yPos);
+      yPos += item.lines.length * 5 + 3;
     });
 
     doc.save(`christophe-domergue-resume-${isFrench ? 'fr' : 'en'}.pdf`);

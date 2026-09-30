@@ -14,6 +14,7 @@ Mon parcours dans la banque et la télématique embarquée couvre également le 
     endDate: 'Date de fin',
     duration: 'Durée de la formation',
   },
+  about: 'À propos',
   contact: 'Contact',
   menu: {
     open: 'Ouvrir Menu',
@@ -40,6 +41,7 @@ My background in banking and embedded telematics also includes front-end technic
     endDate: 'End Date',
     duration: 'Education duration',
   },
+  about: 'About me',
   contact: 'Contact',
   menu: {
     open: 'Open Menu',
